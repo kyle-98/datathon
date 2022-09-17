@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Asian Needle Ant</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="ana.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+    <!--Header-->
+    <div class="header" id="header">
+        <div id="main-head-container" style="height:180px;display:table;width:100%;text-align:center;">
+            <span id="main-head-text" style="font-size:37px;font-weight:bold;">Invasive vs. NonInvasive</span>
+            <span id="sub-head-text" style="font-size:23px;">
+                <br>
+                Virginia Wesleyan University
+            </span>
+        </div>
+    </div>
+
+    <!--Nav Bar-->    
+    <div id="nav-bar"></div>
+    <script>
+        $(function(){
+            $("#nav-bar").load("nav.html");
+            });
+    </script>
+
+    <div class="main">
+        <div class="main-ana-content">
+
+            <div class="needle-header">
+                <bl>Chart</bl>
+            </div>
+            <div class="info-header">
+                <bl>Information</bl>
+            </div>
+
+
+            <div style="display:table;">
+                <div class="info-left">
+                    <br>
+                    <img src="pictures/AntsGraphStackedBar.png" id="needle-ant-img">
+                </div>
+    
+                <div class="info-right">
+                    <br>
+                    This graph shows the total number of ants in each area that data was gathered in, and the total number of invasive vs noninvasive species collected.
+                    This shows us that the noninvasive species heavily dominate the invasive species in the Hampton Roads and greater regions.  As seen on the data prediction 
+                    webpage, invasive populations can multiply fast and can quickly overpower the noninvasive species in an area.  This is why the data and knowledge of invasive species, 
+                    and not just for ants, should be monitored and shared publically.
+                </div>
+            </div>
+            
+        </div>
+    </div> 
+    
+</body>
+
+</html>

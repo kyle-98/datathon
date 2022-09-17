@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>VWU Datathon</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header" id="header">
+        <div id="main-head-container" style="height:180px;display:table;width:100%;text-align:center;">
+            <span id="main-head-text" style="font-size:37px;font-weight:bold;">All About Ants in Hampton Roads</span>
+            <span id="sub-head-text" style="font-size:23px;">
+                <br>
+                Virginia Wesleyan University
+            </span>
+        </div>
+    </div>
+    
+    <!--Nav Bar-->    
+    <div id="nav-bar"></div>
+    <script>
+        $(function(){
+            $("#nav-bar").load("nav.html");
+            });
+        
+        $(this).addClass('active'); $(this).parents('li').addClass('active');
+    </script>
+    
+    <div id="main-container">
+        <img src="vwu_logo_notT.jpg" style="position:absolute;top:320px;left:250px">
+        <div id="main-page-contents">
+            <h1>Goal</h1>
+            <p style="font-size:18px;">
+                The main goal of this project is to give the public and researchers access to data about general and invasive
+                ant species in the Hampton Roads area.  This website will give loads of information regarding the main types of 
+                invasive ants that inhabit the Hampton Roads area.  The website shows this information through data visualization
+                and analytical studies done on the dataset.  You will be able to find pictures, details, charts, and a map to show
+                where they are mostly located at.  After looking through the website the user should be able to have some basic 
+                understandings of different species of ants and how they are invasive or noninvasive towards the biodiversity in the 
+                Hampton Roads region.
+            </p>
+        </div>
+    </div>
+
+</body>
+

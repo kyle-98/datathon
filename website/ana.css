@@ -1,0 +1,64 @@
+.main{
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 95%;
+}
+
+.main-ana-content{
+    margin: auto;
+    display:table;
+    padding:0px;
+    text-align: center;
+    width: 95%;
+    position: absolute;
+    margin-top: 270px;
+}
+
+.needle-header{
+    display:inline-block;
+    margin:auto;
+    font-size:30px;
+}
+
+.info-header{
+    display:inline-block;
+    margin:auto;
+    font-size:30px;
+    margin: auto;
+    margin-left: 700px;
+}
+
+bl:after{
+    background: #b8eaf8;
+    height:3px;
+    content:'';
+    display:block;
+    margin-top:1px;
+}
+
+.info-left{
+    text-align: left;
+    display:table-cell;
+    vertical-align: top;
+    width:40%;
+}
+
+#needle-ant-img{
+    width:70%;
+    line-height: 150px;
+    text-align: left;
+    display:table-cell;
+    vertical-align: top;
+    margin-left: 140px;
+}
+
+.info-right{
+    width:40%;
+    display:table-cell;
+    vertical-align: top;
+    text-align: left;
+    font-size: 18px;
+}

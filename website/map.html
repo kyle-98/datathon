@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Species Maps</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="maps.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header" id="header">
+        <div id="main-head-container" style="height:180px;display:table;width:100%;text-align:center;">
+            <span id="main-head-text" style="font-size:37px;font-weight:bold;">Species Maps</span>
+            <span id="sub-head-text" style="font-size:23px;">
+                <br>
+                Virginia Wesleyan University
+            </span>
+        </div>
+    </div>
+    
+    <!--Nav Bar-->    
+    <div id="nav-bar"></div>
+    <script>
+        $(function(){
+            $("#nav-bar").load("nav.html");
+            });
+        
+        $(this).addClass('active'); $(this).parents('li').addClass('active');
+    </script>
+    
+    
+
+    <div class="main">
+        <div class="main-content">
+
+            <div class="maps-header">
+                <bl>Map</bl>
+            </div>
+            
+
+            <div style="display:table;">
+                <br>
+                <div class="background-buttons">
+                    <button onclick="satellite()">Satellite</button>
+                    <button onclick="terrain()">Terrain</button>
+                </div>
+
+                <div class="location-buttons">
+                    <button id="all-btn" >All</button>
+                    <button id="willams-btn">Willamsburg</button>
+                    <button id="chesa-btn">Cheasapeake</button>
+                    <button id="vabeach-btn">Virginia Beach</button>
+                    <button id="surry-btn">Surry</button>
+
+                </div>
+
+                <div class="map-type-buttons">
+                    <button id="clust-btn">Clustered Column</button>
+                    <button id="stacked-btn">Stacked Column</button>
+                    <button id="heatmap-btn">Heatmap</button>
+
+                </div>
+
+                <br><br>
+                <div class="map-image-div">
+                    <img id="map-image" src="pictures/maps/clustered_column_all_default.png">
+                </div>
+            
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        //background types
+        function satellite(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if (y[y.length - 1] = "default") 
+                y.pop();
+                y.push("satellite");
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;   
+        }
+
+        function terrain(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if (y[y.length - 1] = "satellite")
+                y.pop();
+                y.push("default");
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+        }
+
+        //map locations & disable buttons
+        document.getElementById('all-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[y.length-2] != "all"){
+                y[y.length-2] = "all";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+         
+            document.getElementById('heatmap-btn').disabled=false;
+            document.getElementById('stacked-btn').disabled=false;
+            document.getElementById('clust-btn').disabled=false;
+            document.getElementById('willams-btn').disabled=false;
+            document.getElementById('chesa-btn').disabled=false;
+            document.getElementById('vabeach-btn').disabled=false;
+            document.getElementById('surry-btn').disabled=false;
+        });
+
+        document.getElementById('willams-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[y.length-2] != "willams"){
+                y[y.length-2] = "willams";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+            
+            document.getElementById('heatmap-btn').disabled=true;
+            document.getElementById('stacked-btn').disabled=true;
+            document.getElementById('clust-btn').disabled=true;
+        });
+        document.getElementById('chesa-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[y.length-2] != "chesa"){
+                y[y.length-2] = "chesa";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+
+            document.getElementById('heatmap-btn').disabled=true;
+            document.getElementById('stacked-btn').disabled=true;
+            document.getElementById('clust-btn').disabled=true;
+        });
+        document.getElementById('vabeach-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[y.length-2] != "vabeach"){
+                y[y.length-2] = "vabeach";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+
+            document.getElementById('heatmap-btn').disabled=true;
+            document.getElementById('stacked-btn').disabled=true;
+            document.getElementById('clust-btn').disabled=true;
+        });
+
+        document.getElementById('surry-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[y.length-2] != "surry"){
+                y[y.length-2] = "surry";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+            
+            document.getElementById('heatmap-btn').disabled=true;
+            document.getElementById('stacked-btn').disabled=true;
+            document.getElementById('clust-btn').disabled=true;
+        });
+
+        //map types
+        document.getElementById('clust-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[0] != "clustered"){
+                y[0] = "clustered";
+                y[1] = "column";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+            document.getElementById('willams-btn').disabled=false;
+            document.getElementById('chesa-btn').disabled=false;
+            document.getElementById('vabeach-btn').disabled=false;
+            document.getElementById('surry-btn').disabled=false;
+        });
+
+        document.getElementById('stacked-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[0] != "stacked"){
+                y[0] = "stacked";
+                y[1] = "column";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+            document.getElementById('willams-btn').disabled=true;
+            document.getElementById('chesa-btn').disabled=true;
+            document.getElementById('vabeach-btn').disabled=true;
+            document.getElementById('surry-btn').disabled=true;
+            
+        });
+
+        document.getElementById('heatmap-btn').addEventListener("click", function(){
+            let x = document.getElementById("map-image").src.split("/");
+            let y = x[x.length - 1];
+            y = y.substring(0, y.length - 4).split("_");
+            if(y[0] != "heat"){
+                y[0] = "heat";
+                y[1] = "map";
+                y = y.join("_").concat("", ".png");
+                document.getElementById("map-image").src=`pictures/maps/${y}`;
+            }
+            document.getElementById('willams-btn').disabled=true;
+            document.getElementById('chesa-btn').disabled=true;
+            document.getElementById('vabeach-btn').disabled=true;
+            document.getElementById('surry-btn').disabled=true;
+
+        });
+    </script>
+    
+
+</body>
+

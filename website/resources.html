@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <title>VWU Datathon | Resources & Tools</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="resources.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header" id="header">
+        <div id="main-head-container" style="height:180px;display:table;width:100%;text-align:center;">
+            <span id="main-head-text" style="font-size:37px;font-weight:bold;">Resources & Tools</span>
+            <span id="sub-head-text" style="font-size:23px;">
+                <br>
+                Virginia Wesleyan University
+            </span>
+        </div>
+    </div>
+
+    <!--Nav Bar-->    
+    <div id="nav-bar"></div>
+    <script>
+        $(function(){
+            $("#nav-bar").load("nav.html");
+            });
+    </script>
+
+    <!--Main Resource Page Information-->
+    <div class="main">
+        <div class="main-resource-content">
+
+            <div class="creators-header">
+                <bl>Creators</bl>
+            </div>
+            <div class="details-header">
+                <bl>Details & Credits</bl>
+            </div>
+
+
+            <div style="display:table;">
+                <div class="creators-left">
+                    <ul>
+                        <li>Devin Calpo</li>
+                        <li>Kyle Forker</li>
+                        <li>Casey Lang</li>
+                        <li>Ash Dobrenen</li>
+                    </ul>
+                </div>
+    
+                <div class="details-right">
+                    <p>
+                        This project uses the programming language known as R for data modeling and prediction of data. This let us be able ot predict the locations that invasive 
+                        species would inhabit in the coming years based on their movement and living areas in the previous years. 
+                        <br><br>The program known as ArcGIS was used to overlay data onto a real world map for visualization.  This allowed us to be able to show the locational data 
+                        that the data set offers and correlate that with a real world map for easier visualization.
+                        <br><br>Excel was used to chart and graph extra data for more visualization.  This allowed for another map similiar to the one that was created in ArcGIS.  Excel
+                        was also used for modeling the data set that we had to start with to make it easier to understand for the public.
+                        <br><br>The general information used to describe the different ant species in this project was referenced from the <a href="https://www.antwiki.org/" target="_blank">AntWiki</a>.
+                        <br><br>The data set for this project was collected by Devin Calpo during a project that he conducted for a college class.  This data was made public <a href="https://github.com/kyle-98/datathon/tree/main/data_public" target="_blank">here</a> on September 8, 2022.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div> 
+    
+
+
+</body>

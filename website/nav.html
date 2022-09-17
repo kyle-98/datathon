@@ -1,0 +1,77 @@
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<div id="main-menu-bar" class="main-menu-bar" style="position:absolute;top:180px;box-shadow:rgb(255,255,255) 0px 0px 0px;">
+    <ul style="list-style:none;box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.541);">
+        <li><a href="index.html">
+            Home
+        </a></li>
+        <li>
+            <div class="dropdown">
+                <a class="dropdown-btn" id="dropdown-btn" onclick="dropDown()">Ant Species</a>
+                <div class="dropdown-content" id="dropdown-content">
+                    <a href="ana.html">Asian Needle Ant</a>
+                    <a href="argentine.html">Argentine Ant</a>
+                    <a href="fire.html">Red Fire Ant</a>
+                    <a href="a_rudis.html">A. Rudis</a>
+                    <a href="n_faisonensis.html">N. Faisonensis</a>
+                    <a href="c_castaneus.html">C. castaneus</a>
+                    <a href="t_curvispinosus.html">T. curvispinosus</a>
+                    <a href="l_aphidicola.html">L. aphidicola</a>
+                    <a href="c_americanus.html">C. americanus</a>
+                    <a href="f_subsericea.html">F. subsericea</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown-2">
+                <a class="dropdown-btn-2" id="dropdown-btn-2" onclick="dropDown_2()">Charts & Data</a>
+                <div class="dropdown-content-2" id="dropdown-content-2">
+                    <a href="charts_and_data_effects.html">Effect of Needle Ants</a>
+                    <a href="invasive_chart.html">Invasive vs. NonInvasive</a>
+                </div>
+            </div>
+            
+        </li>
+        
+        <li><a href="map.html">
+            Maps
+        </a></li>
+        <li><a href="resources.html">
+            Resources & Tools
+        </a></li>
+
+    </ul>
+</div>
+
+<script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+
+    function dropDown() {
+        document.getElementById("dropdown-content").classList.toggle("show");  
+    }
+
+    function dropDown_2() {
+        document.getElementById("dropdown-content-2").classList.toggle("show-2");  
+    }
+
+    window.onclick = function(e) {
+        if (!e.target.matches('.dropdown-btn')) {
+            var myDropdown = document.getElementById("dropdown-content");
+            if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show'); 
+            }
+        }
+        if(!e.target.matches('.dropdown-btn-2')){
+            console.log('temp');
+            var myDropdown2 = document.getElementById("dropdown-content-2");
+            if (myDropdown2.classList.contains('show-2')){
+                myDropdown2.classList.remove('show-2');
+            }
+        }
+    }
+</script>
